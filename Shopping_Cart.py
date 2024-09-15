@@ -1,3 +1,9 @@
+# Add items to the cart.
+# View the items in the cart.
+# Remove items from the cart.
+# Exit the program.
+
+
 # Steps to Build:
 # Create an empty list to represent the shopping cart.
 # Use a loop to continuously ask the user for input.
@@ -5,34 +11,56 @@
 # Use if-else statements to handle the user's choices.
 
 
-
-def show_menu():
-    print("select an option:")
-    print("1, Add an itom:")
-    print("2, Remove an element:")
-    print("3, View cart :")
+def show_cart():
+    print("select an option")
+    print("1, Add an itom in cart: ")
+    print("2, Remove an itom:")
+    print("3, Veiw cart:")
     print("4, Exit:")
-
+  
 cart = []
+
 while True:
-    show_menu()
+    show_cart()
+
+    choise = input("Enter your choise:")
+
+    if choise == "1":
+        item = input("Enter the itom to add:")
+        cart.append(item)
+        print(f"{item} Add to cart:")
     
-    choise = input("Enter your input (1-4):")
-     
+
+    elif choise == "2":
+        item = input("Which item you want to remove:")
+        if item in cart:
+            cart.remove(item)
+            print(f"Succesfully remove {item}")
+        else:
+            print(f"{item} not found in cart")
+
+    elif choise == "3":
+        if choise == 0:
+            print("your cart is empty.")
+        else:
+            print("All items in cart")
+            for i,item in enumerate(cart ,1):
+                print(f"{i} , {item}")
+
+    elif  choise == "4":
+        print("Exit from cart")
+        break
+    else:
+        print("an in valied item")
+           
+
     
-    if choise == '1':
-        items = input("Enter itom for add to cart:")
-        cart.append(items)
-        print(f"{items} added to cart")
-      
 
-# shopping_cart_list = []
 
-# user_input = input("Enter your itoms:")
+        
 
-# for i in user_input:
-#     shopping_cart_list.append(i)
-# print(shopping_cart_list)
+
+
 
 
 
